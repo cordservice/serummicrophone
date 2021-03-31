@@ -5,19 +5,23 @@
   box-sizing: border-box;
 }
 
+.mobile-user {
+  text-align: center;
+  position: relative;
+  color: crimson;
+  font-family: "Source Sans Pro", sans-serif;
+  
+}
+
 html, body {
   width: 100%;
   height: 100%;
 }
 
-
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-body{
-    background: #fcfcfc;
 }
 footer{
     position: absolute;
@@ -191,5 +195,194 @@ body {
       box-shadow: -2px 2px 0px 0px #202020, -10px 10px 40px 0px rgba(0, 0, 0, 0.3);
       transform: translate(0px, 0px) rotateX(30deg) rotateZ(-20deg);
     }
+  }
+}
+
+/* 
+Credits: https://codepen.io/milanraring
+*/
+
+
+
+.wrapper {
+  --color: crimson;
+  --color-invert: #353535;
+  --clip-path: circle(15px at left);
+  --duration: .4s;
+  --timing-function: ease;
+  text-decoration: none;
+  margin-top: 200px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.wrapper .video {
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 15px;
+  -webkit-clip-path: var(--clip-path);
+          clip-path: var(--clip-path);
+  transition: -webkit-clip-path var(--duration) var(--timing-function);
+  transition: clip-path var(--duration) var(--timing-function);
+  transition: clip-path var(--duration) var(--timing-function), -webkit-clip-path var(--duration) var(--timing-function);
+}
+.wrapper .video video {
+  position: fixed;
+  background: #c4cbde;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+}
+.wrapper .text {
+  position: relative;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+  opacity: var(--opacity, 1);
+  transition: opacity 0.3s var(--timing-function) 0.2s;
+}
+.wrapper .text::before, .wrapper .text::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -1px;
+  right: 25px;
+  height: 0;
+}
+.wrapper .text::before {
+  box-shadow: 26px 0 0 1px var(--color);
+  right: var(--r, 100%);
+  opacity: var(--opacity, 0);
+  transition: right 0.5s ease-in, opacity 0.1s linear;
+}
+.wrapper .text::after {
+  box-shadow: 26px 0 0 1px var(--color-invert);
+  -webkit-clip-path: var(--clip-path);
+          clip-path: var(--clip-path);
+  transition: -webkit-clip-path var(--duration) var(--timing-function);
+  transition: clip-path var(--duration) var(--timing-function);
+  transition: clip-path var(--duration) var(--timing-function), -webkit-clip-path var(--duration) var(--timing-function);
+}
+.wrapper .text > span::before, .wrapper .text > span::after {
+  content: attr(data-text);
+  padding-left: 26px;
+}
+.wrapper .text > span::before {
+  color: var(--color);
+}
+.wrapper .text > span::after {
+  color: var(--color-invert);
+  -webkit-clip-path: var(--clip-path);
+          clip-path: var(--clip-path);
+  transition: -webkit-clip-path var(--duration) var(--timing-function);
+  transition: clip-path var(--duration) var(--timing-function);
+  transition: clip-path var(--duration) var(--timing-function), -webkit-clip-path var(--duration) var(--timing-function);
+  position: absolute;
+  left: 0;
+}
+
+@media all and (min-width:960px) and (max-width: 1024px) {
+  .card-container{
+    display: none;
+  }
+  .wrapper{
+    display: none;
+  }
+  .mobile-user {
+    display: block;
+  }
+}
+
+@media all and (min-width:801px) and (max-width: 959px) {
+  .card-container{
+    display: none;
+  }
+  .wrapper{
+    display: none;
+  }
+  .mobile-user {
+    display: block;
+  }
+}
+
+@media all and (min-width:769px) and (max-width: 800px) {
+  .card-container{
+    display: none;
+  }
+  .wrapper{
+    display: none;
+  }
+  .mobile-user {
+    display: block;
+  }
+}
+
+@media all and (min-width:569px) and (max-width: 768px) {
+  .card-container{
+    display: none;
+  }
+  .wrapper{
+    display: none;
+  }
+  .mobile-user {
+    display: block;
+  }
+}
+
+@media all and (min-width:481px) and (max-width: 568px) {
+  .card-container{
+    display: none;
+  }
+  .wrapper{
+    display: none;
+  }
+  .mobile-user {
+    display: block;
+  }
+}
+
+@media all and (min-width:321px) and (max-width: 480px) {
+  .card-container{
+    display: none;
+  }
+  .wrapper{
+    display: none;
+  }
+  .mobile-user {
+    display: block;
+  }
+}
+
+@media all and (min-width:0px) and (max-width: 320px) {
+  .card-container{
+    display: none;
+  }
+  .wrapper{
+    display: none;
+  }
+  .mobile-user {
+    display: block;
+  }
+}
+
+
+@media screen and (min-width: 0px) and (max-width: 400px) {
+  .card-container{
+    display: none;
+  }
+  .wrapper{
+    display: none;
+  }
+  .mobile-user {
+    display: block;
   }
 }
